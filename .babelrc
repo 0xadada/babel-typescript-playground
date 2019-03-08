@@ -1,0 +1,13 @@
+{
+  presets: [
+    [
+      '@babel/env', {
+        targets: {
+          firefox: '7'
+        },
+        useBuiltIns: 'usage'
+      }
+    ],
+    '@babel/preset-typescript'
+  ]
+}

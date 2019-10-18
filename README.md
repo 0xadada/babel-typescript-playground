@@ -10,7 +10,7 @@ $ yarn add -D @babel/core @babel/cli @babel/present-env
 $ yarn babel example.js
 ```
 
-## Overview
+## Babel
 
 Parse all the JavaScript files in the `src` directory, apply any transformations 
 we have told it to, and output each file to the `lib` directory.
@@ -20,12 +20,12 @@ that instruct Babel on how to carry out transformations to the code.
 
 to use the arrow function transformation:
 ```bash
-$ yarn babel example.js --plugins=@babel/plugin-transform-arrow-functions
+$ yarn babel index.js --plugins=@babel/plugin-transform-arrow-functions
 ```
 
 Babel also allows for presents, which are named sets of transformations:
 ```bash
-$ yarn babel example.js --presets=@babel/env
+$ yarn babel index.js --presets=@babel/preset-env
 ```
 
 ## TypeScript

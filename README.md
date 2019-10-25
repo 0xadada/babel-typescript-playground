@@ -6,8 +6,8 @@ _learning babel transforms and typescript._
 `@babel/cli` contains CLI tooling that consumes the core library.
 
 ```bash
-$ yarn add -D @babel/core @babel/cli @babel/present-env
-$ yarn babel example.js
+yarn add -D @babel/core @babel/cli @babel/preset-env
+yarn add @babel/polyfill
 ```
 
 ## Babel
@@ -20,19 +20,32 @@ that instruct Babel on how to carry out transformations to the code.
 
 to use the arrow function transformation:
 ```bash
-$ yarn babel index.js --plugins=@babel/plugin-transform-arrow-functions
+npx babel src/ --out-dir lib/ --plugins=@babel/plugin-transform-arrow-functions 
 ```
 
 Babel also allows for presents, which are named sets of transformations:
 ```bash
-$ yarn babel index.js --presets=@babel/preset-env
+npx babel src/ --out-dir lib/ --presets=@babel/preset-env 
+```
+
+Converts this ES2017:
+```js
+const fn = (value) => value;
+```
+into
+```js
+"use strict";
+
+var fn = function fn(value) {
+  return value;
+};
 ```
 
 ## TypeScript
 
 To handle typescript, add the `@babel/preset-typescript` plugin.
 ```bash
-$ yarn add -D @babel/preset-typescript
+yarn add -D @babel/preset-typescript
 ```
 
 Given a TypeScript function:

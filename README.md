@@ -10,7 +10,29 @@ yarn add -D @babel/core @babel/cli @babel/preset-env
 yarn add @babel/polyfill
 ```
 
-## Babel
+## Try it
+
+Transpile `index.js` (ES2017) into ES5 and run `lib/index.js` in node.
+
+```bash
+$ npm run build:js
+$ npm run -s start
+hello,
+world
+```
+
+Transpile `index.ts` (TypeScript) into ES5 and run `lib/index.js` in node.
+
+```bash
+$ npm run build:js
+$ npm run -s start
+hello,
+world
+```
+
+## How it Works
+
+### Babel
 
 Parse all the JavaScript files in the `src` directory, apply any transformations 
 we have told it to, and output each file to the `lib` directory.
@@ -29,9 +51,11 @@ npx babel src/ --out-dir lib/ --presets=@babel/preset-env
 ```
 
 Converts this ES2017:
+
 ```js
 const fn = (value) => value;
 ```
+
 into
 ```js
 "use strict";
@@ -41,7 +65,7 @@ var fn = function fn(value) {
 };
 ```
 
-## TypeScript
+### TypeScript
 
 To handle typescript, add the `@babel/preset-typescript` plugin.
 ```bash
@@ -54,6 +78,7 @@ const fn = (value : Number) : String => value.toString();
 ```
 
 You'll need to specify the `.ts` extension to specify the TypeScript file:
+
 ```bash
 $ yarn -s babel --extensions ".ts" example.ts
 "use strict";

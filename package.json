@@ -1,6 +1,11 @@
 {
   "name": "babel-typescrpit-playground",
   "license": "GPL-3.0",
+  "scripts": {
+    "build:js": "npx babel src/ --out-dir lib/ --delete-dir-on-start --presets=@babel/preset-env",
+    "build:ts": "npx babel src/ --out-dir lib/ --delete-dir-on-start --extensions '.ts'",
+    "start": "node lib/"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.6.0"
   },

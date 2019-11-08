@@ -1,6 +1,11 @@
+// ES2017
+
 // arrow function with destructured arguments and defaults
-const fn = ({ message: msg = "world" } = {}) => console.log(msg);
+const fc = ({ message: msg = "world" } = {}) => {
+  console.log(msg);
+  return msg;
+};
 
 // invoke w/and without args
-fn({ message: "hello, " });
-fn();
+fc({ message: "hello, " });
+fc();
